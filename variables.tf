@@ -25,3 +25,7 @@ variable "kubernetes_version" {
 variable "ssh_key" {
   description = "provided as env variable"
 }
+
+variable "nodes_count" {
+  description = "kubernetes cluster nodes count"
+}

@@ -13,6 +13,7 @@ resource "azurerm_resource_group" "aks-rg" {
 #
 # create the AKS cluster
 #
+
 resource "azurerm_kubernetes_cluster" "aks-cluster" {
 
   resource_group_name = "${azurerm_resource_group.aks-rg.name}"
@@ -25,7 +26,7 @@ resource "azurerm_kubernetes_cluster" "aks-cluster" {
   "agent_pool_profile" {
     name            = "agp001"
     vm_size         = "Standard_D4s_v3"
-    count           = "3"
+    count           = "${var.nodes_count}"
     os_type         = "Linux"
     os_disk_size_gb = 30
   }
