@@ -24,7 +24,7 @@ resource "azurerm_kubernetes_cluster" "aks-cluster" {
 
   "agent_pool_profile" {
     name    = "default"
-    vm_size = "D4s_v3"
+    vm_size = "Standard_D4s_v3"
     count   = "3"
   }
 
