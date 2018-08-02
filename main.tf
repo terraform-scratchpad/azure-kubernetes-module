@@ -23,9 +23,11 @@ resource "azurerm_kubernetes_cluster" "aks-cluster" {
   dns_prefix          = "akstestagent1"
 
   "agent_pool_profile" {
-    name    = "default"
-    vm_size = "Standard_D4s_v3"
-    count   = "3"
+    name            = "agp001"
+    vm_size         = "Standard_D4s_v3"
+    count           = "3"
+    os_type         = "Linux"
+    os_disk_size_gb = 30
   }
 
   "service_principal" {
