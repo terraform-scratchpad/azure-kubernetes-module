@@ -29,3 +29,8 @@ variable "ssh_key" {
 variable "nodes_count" {
   description = "kubernetes cluster nodes count"
 }
+
+
+variable "tags" {
+  type = "map"
+}

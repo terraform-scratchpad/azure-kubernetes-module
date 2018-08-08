@@ -13,7 +13,6 @@ resource "azurerm_resource_group" "aks-rg" {
 #
 # create the AKS cluster
 #
-
 resource "azurerm_kubernetes_cluster" "aks-cluster" {
 
   resource_group_name = "${azurerm_resource_group.aks-rg.name}"
@@ -42,5 +41,7 @@ resource "azurerm_kubernetes_cluster" "aks-cluster" {
       key_data = "${var.ssh_key}"
     }
   }
+
+  tags            = "${var.tags}"
 
 }
